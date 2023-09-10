@@ -4,23 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meal Finder</title>
+
+    <!-- Add Bootstrap CSS link -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Meal Finder</h1>
-    
-    <!-- Search Input -->
-    <input type="text" id="search" placeholder="Search for a meal...">
-    
-    <!-- Suggestions Dropdown -->
-    <ul id="suggestions"></ul>
-    
-    <!-- Favorite Meals List -->
-    <h2>My Favorite Meals</h2>
-    <ul id="favorites"></ul>
-    
-    <!-- Meal Details Page -->
-    <div id="meal-details"></div>
+    <!-- Use Bootstrap classes for styling -->
+    <div class="container">
+        <h1 class="mt-5">Meal Finder</h1>
 
+        <!-- Search Input -->
+        <div class="input-group mt-4">
+            <input type="text" class="form-control" id="search" placeholder="Search for a meal...">
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="button">Search</button>
+            </div>
+        </div>
+
+        <!-- Suggestions Dropdown -->
+        <ul id="suggestions" class="list-group mt-4"></ul>
+
+        <!-- Favorite Meals List -->
+        <h2 class="mt-4">My Favorite Meals</h2>
+        <ul id="favorites" class="list-group"></ul>
+
+        <!-- Meal Details Page -->
+        <div id="meal-details" class="mt-4"></div>
+    </div>
+
+    <!-- Add Bootstrap JavaScript and jQuery (required for some Bootstrap features) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
