@@ -3,13 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meal Search</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Meal Finder</title>
 </head>
 <body>
-    <h1>Meal Search</h1>
-    <input type="text" id="mealName" placeholder="Enter a meal name">
+    <h1>Meal Finder</h1>
+    
+    <!-- Search Input -->
+    <input type="text" id="search" placeholder="Search for a meal...">
+    
+    <!-- Suggestions Dropdown -->
     <ul id="suggestions"></ul>
+    
+    <!-- Favorite Meals List -->
+    <h2>My Favorite Meals</h2>
+    <ul id="favorites"></ul>
+    
+    <!-- Meal Details Page -->
+    <div id="meal-details"></div>
 
     <script src="script.js"></script>
 </body>
