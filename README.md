@@ -37,37 +37,12 @@ To run MealFinder locally, follow these steps:
 
 1. **Clone the Repository**
    ```
-   git clone https://github.com/yourusername/meal-finder.git
+   git clone https://github.com/amritanandsingh/MEAL
    cd meal-finder
    ```
 
-2. **Install Dependencies**
-   ```
-   npm install
-   ```
-
-3. **Configure API Key**
-   - You will need to obtain an API key from the meal API provider (replace `YOUR_API_KEY` below).
-   - Create a `.env` file in the project root and add your API key:
-     ```
-     REACT_APP_API_KEY=YOUR_API_KEY
-     ```
-
-4. **Start the Development Server**
-   ```
-   npm start
-   ```
-
-5. **Open in Browser**
-   - Open your web browser and go to `http://localhost:3000` to access the MealFinder app.
-
-## Technologies Used
-
-- React: Frontend JavaScript library for building user interfaces.
-- [Meal API](https://www.example.com/api): The source of meal data.
-
 ## Credits
 
-This project was created by [Your Name]. Feel free to contribute, report issues, or provide feedback to help improve MealFinder.
+This project was created by Amrit. Feel free to contribute, report issues, or provide feedback to help improve MealFinder.
 
 Thank you for using MealFinder! Enjoy exploring and discovering delicious meals!
