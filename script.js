@@ -3,7 +3,18 @@ const suggestions = document.getElementById('suggestions');
 const favoritesList = document.getElementById('favorites');
 const mealDetails = document.getElementById('meal-details');
 
-let favoriteMeals = [];
+let favoriteMeals = JSON.parse(localStorage.getItem('favoriteMeals')) || [];
+
+// Function to save favoriteMeals to localStorage
+function saveFavoriteMeals() {
+    localStorage.setItem('favoriteMeals', JSON.stringify(favoriteMeals));
+}
+
+function removeFromFavorites(mealId) {
+    favoriteMeals = favoriteMeals.filter(meal => meal.id !== mealId);
+    updateFavoritesList();
+    saveFavoriteMeals();
+}
 
 // Function to fetch meal suggestions from the API
 async function getMealSuggestions(query) {
@@ -26,7 +37,7 @@ function displaySuggestions(meals) {
         const viewDetailsLink = document.createElement('a');
         viewDetailsLink.textContent = 'View Details';
         viewDetailsLink.href = `meal-details.html?id=${meal.idMeal}`;
-        viewDetailsLink.target = '_blank'; // Open in a new tab
+        viewDetailsLink.target = '_blank';
 
         li.appendChild(addToFavoritesBtn);
         li.appendChild(viewDetailsLink);
@@ -63,6 +74,12 @@ function updateFavoritesList() {
     favoriteMeals.forEach(meal => {
         const li = document.createElement('li');
         li.textContent = meal.name;
+
+        const removeFromFavoritesBtn = document.createElement('button');
+        removeFromFavoritesBtn.textContent = 'Remove from Favorites';
+        removeFromFavoritesBtn.addEventListener('click', () => removeFromFavorites(meal.id));
+
+        li.appendChild(removeFromFavoritesBtn);
         favoritesList.appendChild(li);
     });
 }
@@ -77,3 +94,5 @@ searchInput.addEventListener('input', async () => {
         suggestions.innerHTML = '';
     }
 });
+
+updateFavoritesList();
